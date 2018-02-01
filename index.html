@@ -3,16 +3,32 @@
 <head>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/media.css">
 	<link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+	<script src="https://use.fontawesome.com/5e72808211.js"></script>
 	<meta charset="UTF-8">
+
 	<title>flexbox </title>
 </head>
 <body>
+
+	<ul class="m-menu"> 
+		<li class="close-menu">&times</li>	
+		<li><a href="#" class="nav-link">Home </a></li>
+		<li><a href="#" class="nav-link">Why MISOCIAL</a> </li>
+		<li><a href="#" class="nav-link">Features</a></li>
+		<li><a href="#" class="nav-link">Articles</a></li>
+		<li><a href="#" class="nav-link">Pricing</a></li>
+		<li><a href="#" class=" get-started-btn nav-link">get started</a></li></ul>
+
 	<div class="main">
 		<div class="main-overlay"></div>
 		<header>
 			<div class="header-logo"><img src="images/logo.png" alt="logo"></div>
-			<nav class="nav-menu">
+			<a class="menu-burger">
+			<i class="fa fa-bars"></i> 	
+			</a>
+			<nav class="nav-menu visible-lg">
 				<ul>
 					<a href="#" class="nav-link">
 						<li>Home</li>
@@ -90,7 +106,7 @@
 	</section>
 	<footer>
 		<div class="header-logo-footer"><img src="images/logo-footer.png" alt="logo"></div>
-			<nav class="nav-menu-footer">
+			<nav class="nav-menu-footer visible-footer">
 				<ul>
 					<a href="#" class="nav-link-footer">
 						<li>Home</li>
@@ -122,5 +138,25 @@
 						</div>
 		</div>
 	</footer>
+	<script
+  src="http://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+  <script>
+  	$(document).ready(function() {
+  		var menu_burger = $('.menu-burger');
+  		var menu = $('.m-menu');
+  		var close = $('.close-menu');
+  		menu_burger.on('click',function(event) {
+  			event.preventDefault();
+  			menu.toggleClass('m-menu__active');  			
+  		});
+
+  		close.on('click',function(event) {
+  			event.preventDefault();
+  			menu.toggleClass('m-menu__active');
+  		});
+  	}); 
+  </script>
 </body>
 </html>
